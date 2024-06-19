@@ -1,6 +1,5 @@
 - 👋 Hi, I’m @anas-git00
-- 👀 I’m interested in JS coding
-- 🌱 I’m currently learning JavaScript
+- 💬 Ask me about react, react native & nodejs
 - 💞️ I’m looking to collaborate with a company
 - 📫 How to reach me,  email: anasosama0800@gmail.com
 - 😄 Pronouns: ...
