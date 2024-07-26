@@ -1,25 +1,50 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import UserContext from "./userContext";
+import Home from "./Home";
+import About from "./Components/About"
+import Contact from ".Contact";
+import { useState } from "react";
+
+
+const Navigation = () => {
+  return (
+    <nav>
+      <ul>
+        <li>
+          <NavLink to="/">Home</NavLink>
+        </li>
+        <li>
+          <NavLink to="/about">About</NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact">Contact</NavLink>
+        </li>
+      </ul>
+    </nav>
+  );
+};
 
 function App() {
+  const [name, setName] = useState("Adnan");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider
+      value={{ name: name, updateName: (newName) => setName(newName) }}
+    >
+      <BrowserRouter>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </BrowserRouter>
+    </UserContext.Provider>
   );
 }
+
+    
+  
 
 export default App;
