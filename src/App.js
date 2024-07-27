@@ -2,9 +2,9 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import UserContext from "./userContext";
-import Home from "./Home";
+import Home from "./Components/Home";
 import About from "./Components/About"
-import Contact from ".Contact";
+import Contact from "./Components/Contact";
 import { useState } from "react";
 
 
